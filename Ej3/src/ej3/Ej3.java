@@ -8,7 +8,7 @@ public class Ej3 {
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
         Controlador control = new Controlador();
-        boolean Verdad = false;
+        boolean Verdad;
 
         do {
             System.out.println("Desea agregar un nuevo alumno?");
@@ -17,7 +17,7 @@ public class Ej3 {
             switch (rta) {
 
                 case "S":
-                    Verdad = control.crearAlumno(Verdad);
+                    Verdad = control.crearAlumno();
                     break;
 
                 case "N":

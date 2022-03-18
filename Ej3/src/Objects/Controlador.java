@@ -19,11 +19,10 @@ public class Controlador {
 
     /**
      * It create every single student
-     *
-     * @param Verdad It is used for the "do while" which is in the Main
-     * @return
+     * @return 
+     * @returnIt is used for the "do while" which is in the Main
      */
-    public boolean crearAlumno(boolean Verdad) {
+    public boolean crearAlumno() {
         System.out.print("Alumno =");
         String name = leer.next();
         name = name.toUpperCase();
@@ -37,11 +36,9 @@ public class Controlador {
         System.out.print("Nota 3 =");
         Integer Nota3 = leer.nextInt();
 
-        Verdad = false;
-
         lista.add(new Alumno(name, Nota1, Nota2, Nota3));
 
-        return Verdad;
+        return false;
     }
 
     /**
