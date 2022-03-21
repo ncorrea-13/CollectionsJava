@@ -4,9 +4,10 @@ public class Pelicula {
 
     private String Titulo;
     private String Director;
-    private double Duracion;
+    private Double Duracion;
+    public int n = 0;
 
-    public Pelicula(String Titulo, String Director, double Duracion) {
+    public Pelicula(String Titulo, String Director, Double Duracion) {
         this.Titulo = Titulo;
         this.Director = Director;
         this.Duracion = Duracion;
@@ -23,7 +24,7 @@ public class Pelicula {
         this.Director = Director;
     }
 
-    public void setDuracion(Integer Duracion) {
+    public void setDuracion(Double Duracion) {
         this.Duracion = Duracion;
     }
 
@@ -35,13 +36,14 @@ public class Pelicula {
         return Director;
     }
 
-    public double getDuracion() {
+    public Double getDuracion() {
         return Duracion;
     }
 
     @Override
     public String toString() {
-        return "Pelicula{" + "Titulo=" + Titulo + ", Director=" + Director + ", Duracion=" + Duracion + '}';
+        n = n++;
+        return "Pelicula" +n+ "{" + "Titulo=" + Titulo + ", Director=" + Director + ", Duracion=" + Duracion + '}';
     }
     
 }

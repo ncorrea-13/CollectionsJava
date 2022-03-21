@@ -31,6 +31,7 @@ public class Ej4 {
         
         cine.mostrarPeliculas();
         
+        cine.ordenGeneral();
     }
 
 }

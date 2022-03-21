@@ -1,6 +1,8 @@
 package objectos;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.Scanner;
 
@@ -23,7 +25,7 @@ public class Cine {
         String Autor = leer.next();
 
         System.out.print("Duración =");
-        double duracion = leer.nextDouble();
+        Double duracion = leer.nextDouble();
 
         lista.add(new Pelicula(Titulo, Autor, duracion));
         return true;
@@ -31,7 +33,7 @@ public class Cine {
 
     public void mostrarPeliculas() {
         Iterator<Pelicula> iterador = lista.iterator();
-        
+
         while (iterador.hasNext()) {
             Pelicula peli = (Pelicula) iterador.next();
             System.out.print(peli.toString());
@@ -39,21 +41,61 @@ public class Cine {
         }
 
     }
-
-    public void mostrarUnaHora() {
-
+    
+    public void ordenGeneral(){
+        Collections.sort(lista, compararHora);
+        mostrarPeliculas();
+        
+        Collections.sort(lista, horaInversa);
+        mostrarPeliculas();
+        
+        Collections.sort(lista, ordenDirector);
+        mostrarPeliculas();
+        
+        Collections.sort(lista, ordenTitulo);
+        mostrarPeliculas();
     }
 
-    public void ordenarDuracion() {
+    
+    public static Comparator<Pelicula> compararHora = new Comparator<Pelicula>() {
+        @Override
+        public int compare(Pelicula P1, Pelicula P2) {
 
-    }
+            return P1.getTitulo().compareTo(P2.getTitulo());
 
-    public void ordenarTitulo() {
+        }
 
-    }
+    };
+    
+    public static Comparator<Pelicula> horaInversa = new Comparator<Pelicula>() {
+        @Override
+        public int compare(Pelicula P1, Pelicula P2) {
 
-    public void ordenarAutor() {
+            return P2.getDuracion().compareTo(P1.getDuracion());
 
-    }
+        }
 
+    };
+    
+    public static Comparator<Pelicula> ordenDirector = new Comparator<Pelicula>() {
+        @Override
+        public int compare(Pelicula P1, Pelicula P2) {
+
+            return P2.getDirector().compareTo(P1.getDirector());
+
+        }
+
+    };
+    
+    public static Comparator<Pelicula> ordenTitulo = new Comparator<Pelicula>() {
+        @Override
+        public int compare(Pelicula P1, Pelicula P2) {
+
+            return P2.getTitulo().compareTo(P1.getTitulo());
+
+        }
+
+    };
+    
 }
+
