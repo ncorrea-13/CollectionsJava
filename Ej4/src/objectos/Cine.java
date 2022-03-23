@@ -44,16 +44,25 @@ public class Cine {
     
     public void ordenGeneral(){
         Collections.sort(lista, compararHora);
-        mostrarPeliculas();
+        mostrarPeliculas();     
+        escribirBarras();
         
         Collections.sort(lista, horaInversa);
         mostrarPeliculas();
+        escribirBarras();
         
         Collections.sort(lista, ordenDirector);
         mostrarPeliculas();
+        escribirBarras();
         
         Collections.sort(lista, ordenTitulo);
         mostrarPeliculas();
+    }
+    
+    public void escribirBarras(){
+        System.out.println("");
+        System.out.println("------------------------------------------------------------------");
+        System.out.println("");
     }
 
     
