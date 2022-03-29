@@ -1,7 +1,6 @@
 package ej6;
 
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 public class Ej6 {
@@ -108,11 +107,10 @@ public class Ej6 {
     }
 
     public static void mostrarProductos(HashMap<String, Integer> Lista) {
-        for (Map.Entry<String, Integer> entry : Lista.entrySet()) {
+        Lista.entrySet().forEach((entry) -> {
             String key = entry.getKey();
             Integer value = entry.getValue();
             System.out.println("Nombre = " + key + ",  precio = " + value);
-
-        }
+        });
     }
 }
